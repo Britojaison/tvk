@@ -3,7 +3,6 @@ import {
   PARTY_ACRONYM,
   IMAGES,
 } from "./constants";
-import { compressImageBlob } from "./utils";
 
 let cachedBaseForCanvas: HTMLImageElement | null = null;
 

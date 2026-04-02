@@ -5,10 +5,6 @@ const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL = "gemini-3.1-flash-image-preview";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 
-// Hardcoded or shared from constants if needed, but keeping it here for simplicity and security
-const IMAGES = {
-    campaignBase: "https://tvk-vijay.vercel.app/selfie.png", // Full URL for server-side fetch
-};
 
 export async function POST(req: Request) {
     if (!API_KEY) {
@@ -125,9 +121,9 @@ OUTPUT: A genuine-looking group selfie that appears to be taken with one phone c
             return NextResponse.json({ error: `Gemini API Error: ${response.status} - ${errorText}` }, { status: response.status });
         }
 
-        const data = await response.json();
+        const data = await response.json() as { candidates?: Array<{ content?: { parts?: Array<{ inlineData?: { mimeType: string, data: string } }> } }> };
         const imgPart = data.candidates?.[0]?.content?.parts?.find(
-            (p: any) => p.inlineData
+            (p) => p.inlineData
         );
 
         if (imgPart?.inlineData?.data) {
@@ -138,8 +134,9 @@ OUTPUT: A genuine-looking group selfie that appears to be taken with one phone c
 
         return NextResponse.json({ error: "AI produced no image" }, { status: 500 });
 
-    } catch (error: any) {
-        console.error("[API_GENERATE] Error:", error);
-        return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
+    } catch (error: unknown) {
+        const message = error instanceof Error ? error.message : "Internal Server Error";
+        console.error("[API_GENERATE] Error:", message);
+        return NextResponse.json({ error: message }, { status: 500 });
     }
 }

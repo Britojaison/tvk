@@ -1,10 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Lexend } from "next/font/google";
+import { Lexend, Noto_Sans_Tamil } from "next/font/google";
 import "./globals.css";
 
 const lexend = Lexend({
   subsets: ["latin"],
   variable: "--font-lexend",
+  display: "swap",
+});
+
+const notoTamil = Noto_Sans_Tamil({
+  subsets: ["tamil"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-noto-tamil",
   display: "swap",
 });
 
@@ -38,14 +45,10 @@ export default function RootLayout({
   return (
     <html lang="ta">
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body
-        className={`${lexend.variable} font-lexend antialiased`}
-        style={{ fontFamily: "'Lexend', sans-serif" }}
+        className={`${lexend.variable} ${notoTamil.variable} font-lexend antialiased`}
+        style={{ fontFamily: "'Lexend', var(--font-noto-tamil), sans-serif" }}
       >
         {/* Animated gradient background */}
         <div className="hero-gradient" />
