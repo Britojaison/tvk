@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { generateCampaignPhoto } from "@/lib/gemini";
-import { downloadImage, shareOnWhatsApp, nativeShare } from "@/lib/utils";
+import { downloadImage, shareOnWhatsApp } from "@/lib/utils";
 import {
   CANDIDATE_NAME,
   CANDIDATE_NAME_TAMIL,
@@ -104,13 +104,14 @@ export default function SelfieFlow() {
       console.log("[CAMERA] Permission granted, stream received");
       streamRef.current = stream;
       setState("camera");
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const error = err as { name?: string };
       console.error("Camera error:", err);
-      if (err.name === "NotAllowedError" || err.name === "PermissionDeniedError") {
+      if (error.name === "NotAllowedError" || error.name === "PermissionDeniedError") {
         setCameraError(
           "📷 கேமரா அனுமதி தேவை! Camera permission was denied. Please allow camera access in your browser settings and try again."
         );
-      } else if (err.name === "NotFoundError") {
+      } else if (error.name === "NotFoundError") {
         setCameraError(
           "📷 கேமரா கிடைக்கவில்லை! No camera found on this device."
         );
