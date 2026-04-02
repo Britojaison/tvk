@@ -31,6 +31,7 @@ export default function CandidateCard() {
                 width={72}
                 height={72}
                 className="object-cover w-full h-full scale-150"
+                priority
                 onError={() => setImgError(true)}
               />
             ) : (
