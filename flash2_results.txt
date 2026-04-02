@@ -1,0 +1,3 @@
+gemini-2.0-flash [TEXT,IMAGE]: ERROR 400 - Model does not support the requested response modalities: image,text
+gemini-2.0-flash-001 [TEXT,IMAGE]: ERROR 400 - Model does not support the requested response modalities: image,text
+gemini-2.0-flash-lite [TEXT,IMAGE]: ERROR 400 - Model does not support the requested response modalities: text,image
