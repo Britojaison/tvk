@@ -1,8 +1,8 @@
 // Candidate details — easy to find and replace
 export const CANDIDATE_NAME = "Vipin";
 export const CANDIDATE_NAME_TAMIL = "விபின்";
-export const CANDIDATE_CONSTITUENCY = "Chennai North Constituency";
-export const CANDIDATE_CONSTITUENCY_TAMIL = "சென்னை வடக்கு தொகுதி";
+export const CANDIDATE_CONSTITUENCY = "Anangulam Constituency";
+export const CANDIDATE_CONSTITUENCY_TAMIL = "அனங்குளம் தொகுதி";
 
 // Party details
 export const PARTY_NAME = "தமிழக வெற்றி கழகம்";
