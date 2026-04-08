@@ -1,6 +1,6 @@
 // Candidate details — easy to find and replace
-export const CANDIDATE_NAME = "Vipin";
-export const CANDIDATE_NAME_TAMIL = "விபின்";
+export const CANDIDATE_NAME = "T.P.V.V. Vipin Chakkaravarthy";
+export const CANDIDATE_NAME_TAMIL = "T.P.V.V. விபின் சக்கரவர்த்தி";
 export const CANDIDATE_CONSTITUENCY = "Alangulam Constituency";
 export const CANDIDATE_CONSTITUENCY_TAMIL = "ஆலங்குளம் தொகுதி";
 
