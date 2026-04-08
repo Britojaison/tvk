@@ -41,11 +41,14 @@ Image 3: Vijay Thalapathy.
 Image 4: TVK Candidate.
 
 Generate a close-up group selfie of Image 1, Image 3, and Image 4 standing together.
+STRICT COMPOSITION RULE: The final image must contain exactly THREE distinct people: one instance of Image 1, one instance of Image 3, and one instance of Image 4. 
+STRICT FRAMING RULE: Ensure that all three individuals (User, Vijay Thalapathy, and TVK Candidate) are positioned fully within the frame. NONE of their faces or heads should be cropped or cut off at the edges of the image. Every face must be seen completely.
+URGENT DISCLAIMER: NEVER generate duplicate versions of Vijay Thalapathy (Image 3) or the TVK Candidate (Image 4). Each subject must appear only once.
 OFFICIAL BACKGROUND: The backdrop must feature only the following TVK-specific elements:
 1. OFFICIAL WHISTLE SYMBOL: The party's clean, modern whistle logo. 
 STRICT DUAL-COLOR RULE: The whistle must be a COMBINATION of colors. It must be either (White and Black) together OR (Red and Yellow) together. 
 CRITICAL: Do NOT use a single solid color for the whistle. It MUST be a two-tone combination of these colors.
-2. OFFICIAL TEXT: The word "TVK" or "TAMIZHAGA VETTRI KAZHAGAM" in bold, premium typography.
+2. OFFICIAL TEXT: The word "TVK" in bold, premium typography.
 STRICT RULE: Do NOT generate ANY flags in the background. Use ONLY whistles or TVK text.
 URGENT NEGATIVE CONSTRAINT: Absolutely NO cycle, NO bicycle, NO bicycle wheels, and NO spoke-based icons. The 'cycle' is an opposition party logo and is STRICTLY FORBIDDEN.
 RESTRICTION: No other political party symbols or icons. Only TVK-specific content.
