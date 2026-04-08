@@ -27,6 +27,9 @@ export const metadata: Metadata = {
       "Take a selfie with Vijay Thalapathy and your TVK candidate!",
     type: "website",
   },
+  other: {
+    google: "notranslate",
+  },
 };
 
 export const viewport: Viewport = {
@@ -43,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ta">
+    <html lang="ta" translate="no" className="notranslate">
       <head>
       </head>
       <body
