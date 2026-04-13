@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { kv } from "@vercel/kv";
 
 const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL = "gemini-3.1-flash-image-preview";
@@ -114,6 +115,12 @@ Subject gaze: Image 1 is looking directly straight into the camera lens.`;
 
         if (!imgPart?.inlineData?.data) {
             return NextResponse.json({ error: "AI produced no image" }, { status: 500 });
+        }
+
+        try {
+            await kv.incr("total_generations");
+        } catch (kvError) {
+            console.error("[KV Tracking Error]:", kvError);
         }
 
         return NextResponse.json({
